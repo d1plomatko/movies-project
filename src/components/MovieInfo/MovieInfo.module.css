@@ -1,0 +1,41 @@
+.movie_info {
+    margin-left: 10px;
+    color: #777;
+
+    font-size: 14px;
+}
+
+.movie_title {
+    color: #2e859e;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.upper {
+    height: 70px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-right: 10px;
+}
+
+.number_wrapper {
+    background-color: #2e859e;
+    color: white;
+
+    height: 25px;
+    width: 25px;
+
+    border-radius: 3px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
