@@ -8,7 +8,7 @@ const MovieInfo = ({movie}) => {
         <div className={css.movie_info}>
             <div className={css.upper}>
                 <div className={css.movie_title}>{movie.title}</div>
-                <div>Released {movie.release_date}</div>
+                <div className={css.date}>{movie.release_date}</div>
             </div>
             <GenreBadge>{movie.genre_ids}</GenreBadge>
             <div className={css.rating}>

@@ -1,6 +1,5 @@
 import StarRatings from "react-star-ratings/build/star-ratings";
 
-
 const StarsRating = ({children}) => {
 
     return(

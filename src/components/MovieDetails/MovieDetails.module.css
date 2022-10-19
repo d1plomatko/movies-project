@@ -1,0 +1,68 @@
+.movie_container {
+    background-color: white;
+
+    max-width: 1200px;
+    /*height: 100vh;*/
+    margin: 0 auto;
+
+    padding: 30px 50px;
+    box-sizing: border-box;
+
+    min-height: 91vh;
+}
+
+.upper {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+
+.left img {
+    width: 300px;
+    height: 450px;
+    margin-right: 60px;
+}
+
+.genres {
+    display: flex;
+    gap: 5px;
+}
+
+
+.overview {
+    width: 800px;
+    line-height: 1.6;
+    color: #444;
+}
+
+
+
+
+
+h1 {
+    margin-top: 0;
+    padding-bottom: 10px;
+
+    border-bottom: 2px solid silver;
+}
+
+.background {
+    height: 450px;
+    width: 300px;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    margin-right: 60px;
+}
+
+
+
+
+

@@ -4,11 +4,24 @@
 
     margin: 0 auto;
 
-    padding: 60px 0;
+    /*padding: 60px 0;*/
 
     box-sizing: border-box;
+
+    position: relative;
+
+    padding: 0 8px;
+
+    min-height: 90vh;
 }
 
+h2 {
+    /*width: 250px;*/
+    /*color: #777;*/
+    margin: 0 0 25px 40px;
+    /*padding-bottom: 10px;*/
+    /*border-bottom: 2px solid gray;*/
+}
 
 .cards {
     max-width: 1100px;
@@ -25,4 +38,264 @@
 
     display: flex;
     justify-content: center;
+    padding-bottom: 60px;
+}
+
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    height: 80px;
+
+
+    padding: 20px 20px 0 20px;
+    margin-bottom: 25px;
+    background-color: white;
+
+    border-bottom: 2px solid silver;
+}
+
+.buttons {
+    height: 100px;
+    width: 750px;
+
+}
+
+.buttons button {
+    height: 35px;
+    padding: 0 12px;
+    border: none;
+    border-right: 1px solid black;
+    border-radius: 0;
+
+    cursor: pointer;
+
+    background-color: transparent;
+
+    transition: all .2s linear;
+}
+
+.buttons button:hover{
+    background-color: #fef7f7;
+    text-decoration: underline;
+}
+
+.search input {
+    width: 300px;
+    height: 30px;
+    box-sizing: border-box;
+
+
+    border: 1px solid #313131;
+    border-right: none;
+
+    padding-left: 15px;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.search button {
+    width: 75px;
+    height: 30px;
+
+    border: none;
+
+    background-color: #313131;
+    color: snow;
+
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.search button:hover {
+    opacity: 0.8;
+}
+
+/*#light {*/
+/*    background-color: white;*/
+/*}*/
+
+/*#dark {*/
+/*    background-color: black;*/
+/*}*/
+
+/*#dark .filters {*/
+/*    background-color: #2e859e;*/
+/*}*/
+
+.box {
+    height: 800px;
+}
+
+.pagination {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    color: #777;
+}
+
+.pagination button {
+    height: 30px;
+    width: 30px;
+
+    background-color: transparent;
+
+
+    border: 1px solid #777;
+    border-radius: 4px;
+    color: #777;
+
+    cursor: pointer;
+
+    transition: all .2s linear;
+}
+
+.pagination button:hover {
+    background-color: #777;
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.3;
+    background-color: #777;
+    color: white;
+}
+
+.pagination button:nth-child(2), .pagination button:nth-child(4) {
+    width: 40px;
+    height: 40px;
+
+    font-size: 22px;
+    border: 2px solid #777;
+}
+
+.page_number{
+    font-weight: bold;
+    font-size: 24px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 4px;
+
+    background-color: #777;
+    color: white;
+}
+
+@media screen and (max-width: 1280px){
+    .cards_wrapper {
+        max-width: 100%;
+    }
+
+
+    .cards {
+        max-width: 835px;
+        gap: 50px;
+    }
+
+    .filters {
+        height: 120px;
+        flex-direction: column-reverse;
+        padding-bottom: 10px;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+    .search input{
+        height: 40px;
+        width: 800px;
+    }
+    .search button {
+        height: 40px;
+    }
+    .search {
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 1025px){
+    .filters {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 15px;
+        height: 130px;
+    }
+
+
+    .search {
+        margin: 0 auto;
+    }
+    .search input {
+        width: 500px;
+    }
+
+    .buttons {
+        width: 100%;
+        padding-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .cards {
+        max-width: 540px;
+    }
+
+    .filters {
+        height: 150px;
+    }
+
+    .search input {
+        height: 30px;
+        width: 400px;
+    }
+
+    .search button {
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .cards {
+        max-width: 245px;
+        gap: 20px;
+    }
+
+    .filters {
+        height: 170px;
+    }
+
+    .search input {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 412px) {
+
+
+    .filters {
+        height: 250px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .search input {
+        width: 250px;
+    }
+
+    /*.buttons button {*/
+    /*    width: 90px;*/
+    /*}*/
 }

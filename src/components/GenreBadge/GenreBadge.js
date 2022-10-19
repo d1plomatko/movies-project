@@ -10,7 +10,7 @@ const GenreBadge = ({children}) => {
 
     for (let id of children) {
         const find = genres.find(value => value.id === id);
-        badges.push(find.name)
+        badges.push(find?.name)
     }
 
     return (

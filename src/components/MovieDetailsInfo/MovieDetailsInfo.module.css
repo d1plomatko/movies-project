@@ -1,0 +1,34 @@
+.info {
+    margin-bottom: 20px;
+    height: 20px;
+
+    display: flex;
+}
+
+h4 {
+    width: 130px;
+    margin: 0;
+}
+
+span {
+    font-weight: 500;
+}
+
+.companies {
+    min-height: 40px;
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 5px;
+
+}
+
+.companies div, .countries div, .genres div {
+    border-bottom: 1px solid gray ;
+}
+
+.countries {
+    display: flex;
+    gap: 5px;
+}

@@ -1,24 +1,51 @@
-import {createAsyncThunk, createSlice, current} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 import {moviesService} from "../../services";
 
 const initialState = {
     movies: [],
+    error: null,
     totalPages: 1,
-    currentPage: 1
+    currentPage: 1,
+    movieDetails: {},
+    loafing: false
 };
 
 
 const getMovies = createAsyncThunk(
     'moviesSlice/getMovies',
-    async ({page}, {rejectWithValue}) => {
+    async ({page, genre}, {rejectWithValue}) => {
         try {
-            const {data} = await moviesService.getMovies(page);
+            const {data} = await moviesService.getMovies(page, genre);
             return data;
         } catch (e) {
             return rejectWithValue(e.response.data);
         }
     }
+);
+
+const search = createAsyncThunk(
+    'movieSlice/search',
+    async ({query, page}, {rejectWithValue}) => {
+        try {
+            const {data} = await moviesService.searchMovies(query, page);
+            return data
+        } catch (e) {
+            return rejectWithValue(e.response.data)
+        }
+    }
+);
+
+const getById = createAsyncThunk(
+    'moviesSlice/getById',
+    async ({id}, {rejectWithValue}) => {
+        try {
+            const {data} = await moviesService.getById(id);
+            return data;
+        } catch (e) {
+            return rejectWithValue(e.response.data)
+        }
+}
 );
 
 const moviesSlice = createSlice({
@@ -29,15 +56,47 @@ const moviesSlice = createSlice({
         builder
             .addCase(getMovies.fulfilled, (state, action) => {
                 state.movies = action.payload.results;
-                state.totalPages = action.payload.total_pages;
-                state.currentPage = action.payload.page;
+                state.error = null
+                state.loading = false
+                state.currentPage = action.payload.page
+                if (action.payload.total_pages > 500) {
+                    state.totalPages = 500
+                } else {
+                    state.totalPages = action.payload.total_pages
+                }
+            })
+            .addCase(getMovies.rejected, (state, action) => {
+                state.error = action.payload
+                console.log(action.payload)
+            })
+            .addCase(getMovies.pending, (state, action) => {
+                state.loading = true
+            })
+            .addCase(search.fulfilled, (state, action) => {
+                state.movies = action.payload.results
+                state.totalPages = action.payload.total_pages
+                state.currentPage = action.payload.page
+                // console.log(action.payload)
+            })
+            .addCase(search.rejected, (state, action) => {
+                state.error = action.payload
+                console.log(action.payload)
+            })
+            .addCase(getById.fulfilled, (state, action) => {
+                state.movieDetails = action.payload
+                state.loading = false
+            })
+            .addCase(getById.pending, (state, action) => {
+                state.loading = true
             })
 });
 
-const {reducer: moviesReducer, actions} = moviesSlice;
+const {reducer: moviesReducer} = moviesSlice;
 
 const moviesActions = {
-    getMovies
+    getMovies,
+    search,
+    getById
 };
 
 export {

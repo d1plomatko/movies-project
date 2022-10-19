@@ -1,5 +1,5 @@
 .movie_info {
-    margin-left: 10px;
+    margin: 0 10px;
     color: #777;
 
     font-size: 14px;
@@ -7,8 +7,10 @@
 
 .movie_title {
     color: #2e859e;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 18px;
+    line-height: 1;
+    margin-bottom: 2px;
 }
 
 .upper {
@@ -38,4 +40,13 @@
     align-items: center;
 }
 
+/*.date {*/
+/*    background-color: #2e859e;*/
+/*    color: white;*/
+/*    padding: 2px;*/
+
+/*    position: absolute;*/
+/*    bottom: 113px;*/
+/*    right: 0;*/
+/*}*/
 

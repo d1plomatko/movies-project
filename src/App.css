@@ -1,3 +1,57 @@
 body {
-    background-color: silver;
+    background-color: #efefef;
 }
+
+
+#card_dark {
+    background-color: #222;
+    box-shadow: 1px 4px 12px 2px black;
+}
+
+
+
+#header_dark {
+    background-color: #060f13;
+}
+
+#main_dark {
+    background-color: #222;
+}
+
+#main_dark h2 {
+    color: gray
+}
+
+#search_dark {
+    background-color: #222;
+    border-bottom: 2px solid black;
+}
+
+#search_dark button {
+    color: #777;
+}
+
+#search_dark button:hover {
+    background-color: #222;
+}
+
+#search_dark input {
+    background-color: #222;
+    color: #777;
+}
+
+#body_dark {
+    background-color: #222d33;
+}
+
+#details_dark {
+    background-color: #222;
+    color: snow;
+    text-decoration: none;
+}
+
+
+#details_dark .info div {
+    border-bottom: 1px solid white;
+}
+

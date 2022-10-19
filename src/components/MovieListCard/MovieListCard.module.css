@@ -12,8 +12,28 @@
 
 .card img {
     width: 100%;
+    height: 367px;
 }
+
+/*.card img:hover{*/
+/*    z-index: 10;*/
+/*}*/
+
 
 .card:hover {
     opacity: 0.7;
 }
+
+.background {
+    height: 367px;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
