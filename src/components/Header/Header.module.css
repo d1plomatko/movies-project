@@ -1,11 +1,7 @@
 header {
-
     max-width: 1200px;
     margin: 0 auto;
 
-    box-sizing: border-box;
-    border-bottom: 1px solid #313131;
-    box-shadow: 0 4px 2px -2px #313131;
 }
 
 .header_container {
@@ -41,12 +37,12 @@ header {
 }
 
 .auth_wrapper button {
-    width: 60px;
+    width: 70px;
     background-color: transparent;
     border: none;
     color: #777;
     font-weight: bolder;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
     transition: all .2s linear;
 }
@@ -56,9 +52,5 @@ header {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1280px){
-    header {
-        max-width: 100%;
-    }
-}
+
 

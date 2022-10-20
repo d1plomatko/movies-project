@@ -2,13 +2,13 @@ import {MovieDetails} from "../components";
 
 
 const MovieDetailsPage = () => {
-    
-    return(
+
+    return (
         <div>
-        <MovieDetails/>
+            <MovieDetails/>
         </div>
     )
-    
+
 }
 
 export {MovieDetailsPage}

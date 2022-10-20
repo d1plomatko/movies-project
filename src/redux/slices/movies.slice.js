@@ -45,7 +45,7 @@ const getById = createAsyncThunk(
         } catch (e) {
             return rejectWithValue(e.response.data)
         }
-}
+    }
 );
 
 const moviesSlice = createSlice({
@@ -56,38 +56,41 @@ const moviesSlice = createSlice({
         builder
             .addCase(getMovies.fulfilled, (state, action) => {
                 state.movies = action.payload.results;
-                state.error = null
-                state.loading = false
-                state.currentPage = action.payload.page
+                state.error = null;
+                state.loading = false;
+                state.currentPage = action.payload.page;
                 if (action.payload.total_pages > 500) {
-                    state.totalPages = 500
+                    state.totalPages = 500;
                 } else {
-                    state.totalPages = action.payload.total_pages
+                    state.totalPages = action.payload.total_pages;
                 }
             })
             .addCase(getMovies.rejected, (state, action) => {
-                state.error = action.payload
-                console.log(action.payload)
+                state.error = action.payload;
+                state.loading = false;
             })
             .addCase(getMovies.pending, (state, action) => {
-                state.loading = true
+                state.loading = true;
             })
             .addCase(search.fulfilled, (state, action) => {
-                state.movies = action.payload.results
-                state.totalPages = action.payload.total_pages
-                state.currentPage = action.payload.page
-                // console.log(action.payload)
+                state.movies = action.payload.results;
+                state.totalPages = action.payload.total_pages;
+                state.currentPage = action.payload.page;
             })
             .addCase(search.rejected, (state, action) => {
-                state.error = action.payload
-                console.log(action.payload)
+                state.error = action.payload;
+                state.loading = false;
             })
             .addCase(getById.fulfilled, (state, action) => {
                 state.movieDetails = action.payload
-                state.loading = false
+                state.loading = false;
             })
             .addCase(getById.pending, (state, action) => {
-                state.loading = true
+                state.loading = true;
+            })
+            .addCase(getById.rejected, (state, action) => {
+                state.error = action.payload;
+                state.loading = false;
             })
 });
 

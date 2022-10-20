@@ -15,10 +15,6 @@
     height: 367px;
 }
 
-/*.card img:hover{*/
-/*    z-index: 10;*/
-/*}*/
-
 
 .card:hover {
     opacity: 0.7;

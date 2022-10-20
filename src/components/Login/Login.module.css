@@ -45,7 +45,6 @@
     border: 2px solid #777;
 
     padding-left: 15px;
-    box-sizing: border-box;
 }
 
 .login_wrapper form input:focus {

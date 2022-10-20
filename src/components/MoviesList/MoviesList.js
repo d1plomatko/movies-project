@@ -10,7 +10,13 @@ import css from './MovieList.module.css';
 const MoviesList = () => {
 
     const {themes} = useSelector(state => state.themeReducer);
-    const {movies, totalPages, currentPage, loading} = useSelector(state => state.moviesReducer);
+    const {
+        movies,
+        totalPages,
+        currentPage,
+        loading,
+        error
+    } = useSelector(state => state.moviesReducer);
     const {genres} = useSelector(state => state.genreReducer);
     const dispatch = useDispatch();
 
@@ -97,61 +103,74 @@ const MoviesList = () => {
 
     return (
         <div className={`${css.container} cards`} id={themes.main}>
-            <div className={css.navbar} id={themes.search}>
-                <div className={css.navbar_inner}>
-                    <button
-                        onClick={() => setToggle(!toggle)}>{toggle ? 'Close' : 'Show Genres'}</button>
-                    <form onSubmit={handleSubmit(submit)} className={css.search}>
-                        <input type="text" placeholder={'Search by name'} {...register('query')}/>
-                        <button>Search</button>
-                    </form>
-                </div>
-                {
-                    toggle && <div className={css.genres}>
-                        {genres.map(genre => <button
-                            onClick={() => setQuery({page: '1', with_genres: genre.id.toString()})}
-                            key={genre.id}>{genre.name}</button>)}
-                    </div>
-                }
-
-            </div>
             {
                 loading ?
                     <div className={css.empty_page}></div> :
-                    <div>
-                        {
-                            query.get('with_genres') ?
-                                <h2>{(genres.find(value => value.id === parseInt(query.get('with_genres'))))?.name} genre</h2> :
-                                <div></div>
-                        }
-                        {
-                            query.get('query') ?
-                                <h2>Results of search «{query.get('query')}»</h2> :
-                                <div></div>
-                        }
-                        <div className={css.cards_wrapper}>
-                            {movies.map(movie => <MovieListCard key={movie.id} movie={movie}/>)}
+                    error ?
+                        <div className={css.error}>{error.status_message}</div> :
+                        <div>
+                            <div className={css.navbar} id={themes.navbar}>
+
+                                <div className={css.navbar_inner}>
+                                    <button
+                                        onClick={() => setToggle(!toggle)}>{toggle ? 'Close' : 'Show Genres'}</button>
+                                    <form onSubmit={handleSubmit(submit)} className={css.search}>
+                                        <input type="text"
+                                               placeholder={'Search by name'} {...register('query')}/>
+                                        <button>Search</button>
+                                    </form>
+                                </div>
+
+                                {
+                                    toggle && <div className={css.genres} id={themes.genres}>
+                                        {genres.map(genre => <button
+                                            onClick={() => setQuery({
+                                                page: '1',
+                                                with_genres: genre.id.toString()
+                                            })}
+                                            key={genre.id}>{genre.name}</button>)}
+                                    </div>
+                                }
+
+                            </div>
+                            <div>
+                                {
+                                    query.get('with_genres') ?
+                                        <h2>{(genres.find(value => value.id === parseInt(query.get('with_genres'))))?.name} genre</h2> :
+                                        <div></div>
+                                }
+                                {
+                                    query.get('query') ?
+                                        <h2>Results of search «{query.get('query')}»</h2> :
+                                        <div></div>
+                                }
+
+                                <div className={css.cards_wrapper}>
+                                    {movies.map(movie => <MovieListCard key={movie.id}
+                                                                        movie={movie}/>)}
+                                </div>
+                            </div>
+
+                            <div className={css.pagination}>
+                                <button disabled={query.get('page') === '1'} onClick={toFirst}><i
+                                    className="fa-solid fa-angles-left"></i></button>
+
+                                <button disabled={query.get('page') === '1'} onClick={prev}><i
+                                    className="fa-solid fa-chevron-left"></i></button>
+
+                                <div className={css.page_number}>{query.get('page')}</div>
+
+                                <button disabled={query.get('page') === totalPages.toString()}
+                                        onClick={next}><i
+                                    className="fa-solid fa-chevron-right"></i></button>
+
+                                <button disabled={query.get('page') === totalPages.toString()}
+                                        onClick={toLast}><i
+                                    className="fa-solid fa-angles-right"></i></button>
+                            </div>
+
                         </div>
-                    </div>
-
             }
-
-            <div className={css.pagination}>
-                <button disabled={query.get('page') === '1'} onClick={toFirst}><i
-                    className="fa-solid fa-angles-left"></i></button>
-
-                <button disabled={query.get('page') === '1'} onClick={prev}><i
-                    className="fa-solid fa-chevron-left"></i></button>
-
-                <div className={css.page_number}>{query.get('page')}</div>
-
-                <button disabled={query.get('page') === totalPages.toString()} onClick={next}><i
-                    className="fa-solid fa-chevron-right"></i></button>
-
-                <button disabled={query.get('page') === totalPages.toString()} onClick={toLast}><i
-                    className="fa-solid fa-angles-right"></i></button>
-            </div>
-
         </div>
     );
 };

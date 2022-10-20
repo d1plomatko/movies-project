@@ -2,12 +2,12 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    color: white;
+    color: #2e859e;
     font-weight: 500;
     gap: 5px;
 
     position: absolute;
-    left: -200px;
+    left: -205px;
     top: -15px;
 
     width: 200px;

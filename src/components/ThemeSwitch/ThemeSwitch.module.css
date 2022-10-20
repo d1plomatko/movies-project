@@ -2,7 +2,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
 
-
+    width: 70px;
     color: #777;
+}
+
+.switch button {
+    background-color: #777;
+    border: none;
+
+    color: #444444;
+    font-size: 24px;
+
+    cursor: pointer;
+
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all .2s ease-in-out;
+}
+
+.switch button:hover {
+    opacity: 0.8;
+}
+
+.switch button:active {
+    opacity: 0.6;
 }

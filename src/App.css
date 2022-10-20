@@ -2,12 +2,14 @@ body {
     background-color: #efefef;
 }
 
+* {
+    box-sizing: border-box;
+}
 
 #card_dark {
     background-color: #222;
     box-shadow: 1px 4px 12px 2px black;
 }
-
 
 
 #header_dark {
@@ -22,24 +24,33 @@ body {
     color: gray
 }
 
-#search_dark {
+#navbar_dark {
     background-color: #222;
     border-bottom: 2px solid black;
 }
 
-#search_dark button {
+#navbar_dark button {
     color: #777;
 }
 
-#search_dark button:hover {
+#navbar_dark button:hover {
     background-color: #222;
 }
 
-#search_dark input {
+#navbar_dark input {
     background-color: #222;
     color: #777;
 }
 
+#genres_dark {
+    background-color: #191717;
+    border: 1px solid black;
+}
+
+#genres_dark button {
+    background-color: #222;
+    color: #777;
+}
 
 #body_dark {
     background-color: #222d33;
