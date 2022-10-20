@@ -1,0 +1,111 @@
+.login_wrapper {
+    max-width: 1200px;
+    height: 91vh;
+    margin: 0 auto;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login_wrapper form {
+    box-shadow: 1px 4px 12px 2px silver;
+    border-radius: 10px;
+    width: 400px;
+    height: 450px;
+
+    background-color: #fdfbfb;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    position: relative;
+}
+
+.login_wrapper form h2 {
+    margin: 10px 0;
+    color: #313131;
+    border-bottom: 2px solid #313131;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    padding-bottom: 4px;
+}
+
+.login_wrapper form input {
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    border: 2px solid #777;
+
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.login_wrapper form input:focus {
+    outline: none;
+}
+
+.login_wrapper form button {
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+
+    border-radius: 0;
+    border: none;
+    background-color: #313131;
+    color: #777;
+    font-weight:bolder;
+
+    transition: all .2s linear;
+    cursor: pointer;
+}
+
+.login_wrapper form button:hover {
+    height: 33px;
+    width: 103px;
+    margin-top: 7px;
+    opacity: 0.8;
+}
+
+.login_wrapper form button:active {
+    opacity: 0.6;
+}
+
+.login_wrapper form button:disabled {
+    opacity: 0.3;
+    height: 33px;
+    width: 103px;
+    margin-top: 7px;
+}
+
+.name_error {
+    position: absolute;
+    top: 222px;
+    color: #f32f2f;
+}
+
+.pass_error {
+    position: absolute;
+    top: 278px;
+    color: #f32f2f;
+}
+
+.name_label {
+    position: absolute;
+    left: 75px;
+    top: 195px;
+    color: #777777;
+}
+.pass_label {
+    position: absolute;
+    left: 75px;
+    top: 250px;
+    color: #777777;
+}

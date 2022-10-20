@@ -55,3 +55,14 @@ body {
     border-bottom: 1px solid white;
 }
 
+#form_dark {
+    background-color: #181717;
+    box-shadow: 1px 4px 12px 2px black;
+}
+
+#form_dark input {
+    background-color: #222;
+    border: 2px solid black;
+    color: white;
+}
+

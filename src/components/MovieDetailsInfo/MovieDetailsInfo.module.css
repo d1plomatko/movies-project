@@ -32,3 +32,8 @@ span {
     display: flex;
     gap: 5px;
 }
+
+.genres {
+    display: flex;
+    gap: 5px;
+}

@@ -101,7 +101,6 @@ const MoviesList = () => {
             {
                 loading ?
                     <div className={css.box}></div> :
-
                     <div>
                         {
                             query.get('with_genres') ?

@@ -12,7 +12,8 @@ const ThemeSwitch = () => {
         main: 'main_light',
         card: 'card_light',
         body: 'body_light',
-        details: 'details_light'
+        details: 'details_light',
+        form: 'form_light'
     }
 
     const dark_themes = {
@@ -21,7 +22,8 @@ const ThemeSwitch = () => {
         main: 'main_dark',
         card: 'card_dark',
         body: 'body_dark',
-        details: 'details_dark'
+        details: 'details_dark',
+        form: 'form_dark'
     }
 
     const {themes} = useSelector(state => state.themeReducer);

@@ -9,3 +9,4 @@ export * from './PosterPreview/PosterPreview';
 export * from './StarsRating/StarsRating';
 export * from './ThemeSwitch/ThemeSwitch';
 export * from './UserInfo/UserInfo.module.css';
+export * from './Login/Login';

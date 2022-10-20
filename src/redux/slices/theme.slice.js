@@ -7,7 +7,8 @@ const initialState = {
         main: 'main_light',
         card: 'card_light',
         body: 'body_light',
-        details: 'details_light'
+        details: 'details_light',
+        form: 'form_light'
     }
 };
 

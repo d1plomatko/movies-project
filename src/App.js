@@ -1,7 +1,8 @@
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import {MainLayout} from "./layouts";
-import {MovieDetailsPage, MoviesPage} from "./pages";
+import {LoginPage, MovieDetailsPage, MoviesPage} from "./pages";
+import {RequireAuth} from "./hoc";
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
             <Route path={'/'} element={<MainLayout/>}>
                 <Route index element={<MoviesPage/>}/>
                 <Route path={'/movies'} element={<MoviesPage/>}/>
-                <Route path={'/movies/:movieID'} element={<MovieDetailsPage/>}/>
+                <Route path={'/movies/:movieID'} element={<RequireAuth><MovieDetailsPage/></RequireAuth>}/>
+                <Route path={'/login'} element={<LoginPage/>}/>
             </Route>
         </Routes>
     );

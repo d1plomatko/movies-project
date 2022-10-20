@@ -16,11 +16,12 @@
 }
 
 h2 {
-    /*width: 250px;*/
-    /*color: #777;*/
-    margin: 0 0 25px 40px;
-    /*padding-bottom: 10px;*/
-    /*border-bottom: 2px solid gray;*/
+    width: 400px;
+    margin: 0 auto 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid gray;
+
+    text-align: center;
 }
 
 .cards {
