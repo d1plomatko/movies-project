@@ -1,4 +1,4 @@
-.cards_wrapper {
+.container {
     max-width: 1200px;
     background-color: white;
 
@@ -15,79 +15,42 @@
     min-height: 90vh;
 }
 
-h2 {
-    width: 400px;
-    margin: 0 auto 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid gray;
+.navbar {
 
-    text-align: center;
-}
-
-.cards {
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.pagination {
-    margin-top: 50px;
-
-    display: flex;
-    justify-content: center;
-    padding-bottom: 60px;
-}
-
-
-.filters {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    height: 80px;
-
-
-    padding: 20px 20px 0 20px;
+    padding: 20px;
     margin-bottom: 25px;
     background-color: white;
 
     border-bottom: 2px solid silver;
 }
 
-.buttons {
-    height: 100px;
-    width: 750px;
-
-}
-
-.buttons button {
-    height: 35px;
-    padding: 0 12px;
+.navbar button {
+    background-color: #313131;
+    color: white;
+    font-weight: bolder;
     border: none;
-    border-right: 1px solid black;
-    border-radius: 0;
-
     cursor: pointer;
 
-    background-color: transparent;
-
     transition: all .2s linear;
+
+    box-sizing: border-box;
+    padding: 0 10px;
+
+    height: 35px;
 }
 
-.buttons button:hover{
-    background-color: #fef7f7;
-    text-decoration: underline;
+.navbar button:hover {
+    opacity: 0.8;
+}
+
+.navbar button:active {
+    opacity: 0.6;
 }
 
 .search input {
-    width: 300px;
-    height: 30px;
+    width: 600px;
+    height: 35px;
     box-sizing: border-box;
-
 
     border: 1px solid #313131;
     border-right: none;
@@ -101,7 +64,7 @@ h2 {
 
 .search button {
     width: 75px;
-    height: 30px;
+    height: 35px;
 
     border: none;
 
@@ -116,23 +79,77 @@ h2 {
     opacity: 0.8;
 }
 
-/*#light {*/
-/*    background-color: white;*/
-/*}*/
 
-/*#dark {*/
-/*    background-color: black;*/
-/*}*/
+.navbar_inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
-/*#dark .filters {*/
-/*    background-color: #2e859e;*/
-/*}*/
+.genres {
 
-.box {
+    margin-top: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    background-color: #efefef;
+    box-sizing: border-box;
+    border: 1px solid #222;
+    padding: 10px;
+
+    z-index: 100;
+
+}
+
+.genres button {
+    height: 35px;
+    padding: 0 12px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+
+    background-color: #777;
+
+    transition: all .2s linear;
+}
+
+.genres button:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+.empty_page {
     height: 800px;
 }
 
+
+h2 {
+    width: 400px;
+    margin: 0 auto 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid gray;
+
+    text-align: center;
+}
+
+.cards_wrapper {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+
 .pagination {
+
+    padding: 60px 0;
+
     width: 100%;
 
     display: flex;
@@ -178,7 +195,7 @@ h2 {
     border: 2px solid #777;
 }
 
-.page_number{
+.page_number {
     font-weight: bold;
     font-size: 24px;
 
@@ -195,108 +212,3 @@ h2 {
     color: white;
 }
 
-@media screen and (max-width: 1280px){
-    .cards_wrapper {
-        max-width: 100%;
-    }
-
-
-    .cards {
-        max-width: 835px;
-        gap: 50px;
-    }
-
-    .filters {
-        height: 120px;
-        flex-direction: column-reverse;
-        padding-bottom: 10px;
-    }
-
-    .buttons {
-        width: 100%;
-    }
-    .search input{
-        height: 40px;
-        width: 800px;
-    }
-    .search button {
-        height: 40px;
-    }
-    .search {
-        margin: 10px auto;
-    }
-}
-
-@media screen and (max-width: 1025px){
-    .filters {
-        flex-direction: column-reverse;
-        align-items: flex-end;
-        gap: 15px;
-        height: 130px;
-    }
-
-
-    .search {
-        margin: 0 auto;
-    }
-    .search input {
-        width: 500px;
-    }
-
-    .buttons {
-        width: 100%;
-        padding-bottom: 15px;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .cards {
-        max-width: 540px;
-    }
-
-    .filters {
-        height: 150px;
-    }
-
-    .search input {
-        height: 30px;
-        width: 400px;
-    }
-
-    .search button {
-        height: 30px;
-    }
-}
-
-@media screen and (max-width: 600px){
-    .cards {
-        max-width: 245px;
-        gap: 20px;
-    }
-
-    .filters {
-        height: 170px;
-    }
-
-    .search input {
-        width: 200px;
-    }
-}
-
-@media screen and (max-width: 412px) {
-
-
-    .filters {
-        height: 250px;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    .search input {
-        width: 250px;
-    }
-
-    /*.buttons button {*/
-    /*    width: 90px;*/
-    /*}*/
-}
