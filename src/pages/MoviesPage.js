@@ -10,4 +10,4 @@ const MoviesPage = () => {
 
 }
 
-export {MoviesPage}
+export {MoviesPage};

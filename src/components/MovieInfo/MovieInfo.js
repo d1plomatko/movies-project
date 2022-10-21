@@ -4,7 +4,7 @@ import css from './MovieInfo.module.css';
 
 const MovieInfo = ({movie}) => {
 
-    return(
+    return (
         <div className={css.movie_info}>
             <div className={css.upper}>
                 <div className={css.movie_title}>{movie.title}</div>
@@ -20,4 +20,4 @@ const MovieInfo = ({movie}) => {
 
 }
 
-export {MovieInfo}
+export {MovieInfo};

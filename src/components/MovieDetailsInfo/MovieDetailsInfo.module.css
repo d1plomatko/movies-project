@@ -1,13 +1,21 @@
 .info {
+
     margin-bottom: 20px;
-    height: 20px;
 
     display: flex;
+
+}
+
+.info div {
+    max-width: 400px;
 }
 
 h4 {
+
     width: 130px;
+
     margin: 0;
+
 }
 
 span {
@@ -15,8 +23,10 @@ span {
 }
 
 .companies {
+
     min-height: 40px;
     max-width: 500px;
+
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -25,15 +35,59 @@ span {
 }
 
 .companies div, .countries div, .genres div {
-    border-bottom: 1px solid gray ;
+
+    border-bottom: 1px solid gray;
+
 }
 
 .countries {
+
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
+
 }
 
 .genres {
+
     display: flex;
     gap: 5px;
+
+}
+
+@media screen and (max-width: 1010px) {
+
+    .info div {
+        max-width: 300px;
+    }
+
+}
+
+@media screen  and (max-width: 920px) {
+
+    .info div {
+        max-width: 200px;
+    }
+
+}
+
+@media screen and (max-width: 830px) {
+
+    .info div {
+        max-width: 150px;
+        border-bottom: none;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+
+    .info div {
+        max-width: 200px;
+    }
+
+    .genres div, .companies div, .countries div {
+        border-bottom: 1px solid gray;
+    }
+
 }

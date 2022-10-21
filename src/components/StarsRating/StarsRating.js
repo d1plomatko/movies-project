@@ -14,4 +14,4 @@ const StarsRating = ({children}) => {
 
 }
 
-export {StarsRating}
+export {StarsRating};

@@ -1,5 +1,6 @@
-import css from './UserInfo.module.css';
 import {useSelector} from "react-redux";
+
+import css from './UserInfo.module.css';
 
 const Userinfo = () => {
 
@@ -14,4 +15,4 @@ const Userinfo = () => {
 
 }
 
-export {Userinfo}
+export {Userinfo};

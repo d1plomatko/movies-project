@@ -23,5 +23,5 @@ const authActions = {
 export {
     authActions,
     authReducer
-}
+};
 

@@ -1,6 +1,8 @@
 .login_wrapper {
+
     max-width: 1200px;
     height: 91vh;
+
     margin: 0 auto;
 
     background-color: white;
@@ -12,8 +14,10 @@
 }
 
 .login_wrapper form {
+
     box-shadow: 1px 4px 12px 2px silver;
     border-radius: 10px;
+
     width: 400px;
     height: 450px;
 
@@ -26,85 +30,122 @@
     gap: 25px;
 
     position: relative;
+
 }
 
 .login_wrapper form h2 {
-    margin: 10px 0;
+
+    margin: 0;
+    padding-bottom: 8px;
+
     color: #313131;
     border-bottom: 2px solid #313131;
+
     width: 150px;
-    height: 30px;
+
     text-align: center;
-    padding-bottom: 4px;
+
 }
 
 .login_wrapper form input {
+
     height: 30px;
     width: 200px;
+
     border-radius: 5px;
     border: 2px solid #777;
 
     padding-left: 15px;
+
 }
 
 .login_wrapper form input:focus {
+
     outline: none;
+
 }
 
 .login_wrapper form button {
+
     width: 100px;
     height: 30px;
+
     margin-top: 10px;
 
     border-radius: 0;
     border: none;
+
     background-color: #313131;
     color: #777;
-    font-weight:bolder;
+    font-weight: bolder;
 
     transition: all .2s linear;
     cursor: pointer;
+
 }
 
 .login_wrapper form button:hover {
+
     height: 33px;
     width: 103px;
+
     margin-top: 7px;
     opacity: 0.8;
+
 }
 
 .login_wrapper form button:active {
+
     opacity: 0.6;
+
 }
 
+
 .login_wrapper form button:disabled {
+
     opacity: 0.3;
+
     height: 33px;
     width: 103px;
+
     margin-top: 7px;
+
 }
 
 .name_error {
+
     position: absolute;
-    top: 222px;
+    top: 214px;
+
     color: #f32f2f;
+
 }
 
 .pass_error {
+
     position: absolute;
-    top: 278px;
+
+    top: 272px;
     color: #f32f2f;
 }
 
+
 .name_label {
+
     position: absolute;
     left: 75px;
-    top: 195px;
+
+    top: 187px;
     color: #777777;
+
 }
+
 .pass_label {
+
     position: absolute;
     left: 75px;
-    top: 250px;
+    top: 242px;
+
     color: #777777;
+
 }

@@ -4,7 +4,7 @@ import css from './MovieDetailsInfo.module.css';
 
 const MovieDetailsInfo = ({movieDetails}) => {
 
-    const {production_companies, production_countries, genres} = movieDetails
+    const {production_companies, production_countries, genres} = movieDetails;
 
     const {themes} = useSelector(state => state.themeReducer);
 
@@ -64,7 +64,8 @@ const MovieDetailsInfo = ({movieDetails}) => {
                         <h4>Production Companies:</h4>
                         <div
                             className={css.companies}>{production_companies.map(company =>
-                            <div className={css.info_inner} key={company.id}>{company.name}</div>)}</div>
+                            <div className={css.info_inner}
+                                 key={company.id}>{company.name}</div>)}</div>
                     </div> :
                     <></>
             }
@@ -73,4 +74,4 @@ const MovieDetailsInfo = ({movieDetails}) => {
 
 }
 
-export {MovieDetailsInfo}
+export {MovieDetailsInfo};

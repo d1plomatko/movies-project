@@ -1,6 +1,5 @@
 import {MovieDetails} from "../components";
 
-
 const MovieDetailsPage = () => {
 
     return (
@@ -11,4 +10,4 @@ const MovieDetailsPage = () => {
 
 }
 
-export {MovieDetailsPage}
+export {MovieDetailsPage};

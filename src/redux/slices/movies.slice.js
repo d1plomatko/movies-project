@@ -15,6 +15,7 @@ const initialState = {
 const getMovies = createAsyncThunk(
     'moviesSlice/getMovies',
     async ({page, genre}, {rejectWithValue}) => {
+
         try {
             const {data} = await moviesService.getMovies(page, genre);
             return data;
@@ -27,11 +28,12 @@ const getMovies = createAsyncThunk(
 const search = createAsyncThunk(
     'movieSlice/search',
     async ({query, page}, {rejectWithValue}) => {
+
         try {
             const {data} = await moviesService.searchMovies(query, page);
-            return data
+            return data;
         } catch (e) {
-            return rejectWithValue(e.response.data)
+            return rejectWithValue(e.response.data);
         }
     }
 );
@@ -39,6 +41,7 @@ const search = createAsyncThunk(
 const getById = createAsyncThunk(
     'moviesSlice/getById',
     async ({id}, {rejectWithValue}) => {
+
         try {
             const {data} = await moviesService.getById(id);
             return data;
@@ -69,13 +72,17 @@ const moviesSlice = createSlice({
                 state.error = action.payload;
                 state.loading = false;
             })
-            .addCase(getMovies.pending, (state, action) => {
+            .addCase(getMovies.pending, (state) => {
                 state.loading = true;
             })
             .addCase(search.fulfilled, (state, action) => {
                 state.movies = action.payload.results;
                 state.totalPages = action.payload.total_pages;
                 state.currentPage = action.payload.page;
+                state.loading = false;
+            })
+            .addCase(search.pending, (state,action) => {
+                state.loading = true;
             })
             .addCase(search.rejected, (state, action) => {
                 state.error = action.payload;
@@ -85,7 +92,7 @@ const moviesSlice = createSlice({
                 state.movieDetails = action.payload
                 state.loading = false;
             })
-            .addCase(getById.pending, (state, action) => {
+            .addCase(getById.pending, (state) => {
                 state.loading = true;
             })
             .addCase(getById.rejected, (state, action) => {

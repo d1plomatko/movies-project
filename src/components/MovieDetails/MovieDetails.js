@@ -8,9 +8,6 @@ import {MovieDetailsInfo} from "../MovieDetailsInfo/MovieDetailsInfo";
 import css from './MovieDetails.module.css'
 
 
-
-
-
 const MovieDetails = () => {
 
     const {movieID: id} = useParams();
@@ -21,39 +18,40 @@ const MovieDetails = () => {
 
     useEffect(() => {
         dispatch(moviesActions.getById({id}))
-    }, [id])
+    }, [id]);
 
 
     return (
         <div className={css.movie_container} id={themes.details}>
             {
                 loading ?
-                    <div></div>:
+                    <div></div> :
                     error ?
-                        <div>{error.status_message}</div>:
-                    <div>
-                        <h1>{movieDetails.title}</h1>
-                        <div className={css.upper}>
-                            <div className={css.left}>
-                                {
-                                    movieDetails.poster_path ?
-                                        <PosterPreview>{movieDetails.poster_path}</PosterPreview> :
-                                        <div className={css.background}>No photo</div>
-                                }
+                        <div>{error.status_message}</div> :
+                        <div>
+                            <h1>{movieDetails.title}</h1>
+                            <div className={css.upper}>
+                                <div className={css.left}>
+                                    {
+                                        movieDetails.poster_path ?
+                                            <PosterPreview movieTitle={movieDetails.title}>{movieDetails.poster_path}</PosterPreview> :
+                                            <div className={css.background}>No photo</div>
+                                    }
+                                </div>
+                                <div className={css.right}>
+                                    <MovieDetailsInfo movieDetails={movieDetails}/>
+                                </div>
                             </div>
-                            <div className={css.right}>
-                                <MovieDetailsInfo movieDetails={movieDetails}/>
+                            <div className={css.footer}>
+                                <h3>Description</h3>
+                                <div id={themes.details}
+                                     className={css.overview}>{movieDetails.overview}</div>
                             </div>
                         </div>
-                        <div className={css.footer}>
-                            <h3>Description</h3>
-                            <div id={themes.details} className={css.overview}>{movieDetails.overview}</div>
-                        </div>
-                    </div>
             }
         </div>
     )
 
 }
 
-export {MovieDetails}
+export {MovieDetails};

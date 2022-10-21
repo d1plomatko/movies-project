@@ -45,61 +45,63 @@ const MoviesList = () => {
         if (data.query) {
             setQuery({query: data.query, page: '1'})
         }
-        reset()
-    }
+        reset();
+    };
 
     const toFirst = () => {
         if (query.get('query')) {
-            setQuery({query: query.get('query'), page: '1'})
+            setQuery({query: query.get('query'), page: '1'});
         } else if (query.get('with_genres')) {
-            setQuery({page: '1', with_genres: query.get('with_genres').toString()})
+            setQuery({page: '1', with_genres: query.get('with_genres').toString()});
         } else {
-            setQuery({page: '1'})
+            setQuery({page: '1'});
         }
-        window.scrollTo(0, 0)
-    }
+        window.scrollTo(0, 0);
+    };
 
     const prev = () => {
         if (query.get('query')) {
-            setQuery(value => ({query: query.get('query'), page: value.get('page') - 1}))
+            setQuery(value => ({query: query.get('query'), page: value.get('page') - 1}));
         } else if (query.get('with_genres')) {
             setQuery(value => ({
                 page: value.get('page') - 1,
                 with_genres: query.get('with_genres').toString()
-            }))
+            }));
         } else {
-            setQuery(value => ({page: value.get('page') - 1}))
+            setQuery(value => ({page: value.get('page') - 1}));
         }
-        window.scrollTo(0, 0)
-    }
+        window.scrollTo(0, 0);
+    };
 
     const next = () => {
         if (query.get('query')) {
-            setQuery(value => ({query: query.get('query'), page: +value.get('page') + 1}))
+            setQuery(value => ({query: query.get('query'), page: +value.get('page') + 1}));
         } else if (query.get('with_genres')) {
             setQuery(value => ({
                 page: +value.get('page') + 1,
-                with_genres: query.get('with_genres').toString()
-            }))
+                with_genres: query.get('with_genres').toString(),
+            }));
         } else {
-            setQuery(value => ({page: +value.get('page') + 1}))
+            setQuery(value => ({page: +value.get('page') + 1}));
         }
-        window.scrollTo(0, 0)
-    }
+        window.scrollTo(0, 0);
+    };
 
     const toLast = () => {
         if (query.get('query')) {
-            setQuery({query: query.get('query'), page: totalPages.toString()})
+            setQuery({query: query.get('query'), page: totalPages.toString()});
         } else if (query.get('with_genres')) {
             setQuery({
                 page: totalPages.toString(),
                 with_genres: query.get('with_genres').toString()
-            })
+            });
         } else {
-            setQuery({page: totalPages.toString()})
+            setQuery({page: totalPages.toString()});
         }
-        window.scrollTo(0, 0)
-    }
+        window.scrollTo(0, 0);
+    };
+
+    console.log(movies);
 
     return (
         <div className={`${css.container} cards`} id={themes.main}>
@@ -133,41 +135,51 @@ const MoviesList = () => {
                                 }
 
                             </div>
-                            <div>
-                                {
-                                    query.get('with_genres') ?
-                                        <h2>{(genres.find(value => value.id === parseInt(query.get('with_genres'))))?.name} genre</h2> :
-                                        <div></div>
-                                }
-                                {
-                                    query.get('query') ?
-                                        <h2>Results of search «{query.get('query')}»</h2> :
-                                        <div></div>
-                                }
 
-                                <div className={css.cards_wrapper}>
-                                    {movies.map(movie => <MovieListCard key={movie.id}
-                                                                        movie={movie}/>)}
-                                </div>
-                            </div>
+                            {
+                                query.get('with_genres') ?
+                                    <h2>{(genres.find(value => value.id === parseInt(query.get('with_genres'))))?.name} genre</h2> :
+                                    <div></div>
+                            }
+                            {
+                                query.get('query') ?
+                                    <h2>Results of search «{query.get('query')}»</h2> :
+                                    <div></div>
+                            }
 
-                            <div className={css.pagination}>
-                                <button disabled={query.get('page') === '1'} onClick={toFirst}><i
-                                    className="fa-solid fa-angles-left"></i></button>
+                            {
+                                movies.length === 0 ? <div className={css.no_matches}>No matches found</div> :
+                                    <div>
+                                        <div className={css.cards_wrapper}>
+                                            {movies.map(movie => <MovieListCard key={movie.id}
+                                                                                movie={movie}/>)}
+                                        </div>
 
-                                <button disabled={query.get('page') === '1'} onClick={prev}><i
-                                    className="fa-solid fa-chevron-left"></i></button>
 
-                                <div className={css.page_number}>{query.get('page')}</div>
+                                        <div className={css.pagination}>
+                                            <button disabled={query.get('page') === '1'}
+                                                    onClick={toFirst}><i
+                                                className="fa-solid fa-angles-left"></i></button>
 
-                                <button disabled={query.get('page') === totalPages.toString()}
-                                        onClick={next}><i
-                                    className="fa-solid fa-chevron-right"></i></button>
+                                            <button disabled={query.get('page') === '1'}
+                                                    onClick={prev}><i
+                                                className="fa-solid fa-chevron-left"></i></button>
 
-                                <button disabled={query.get('page') === totalPages.toString()}
-                                        onClick={toLast}><i
-                                    className="fa-solid fa-angles-right"></i></button>
-                            </div>
+                                            <div
+                                                className={css.page_number}>{query.get('page')}</div>
+
+                                            <button
+                                                disabled={query.get('page') === totalPages.toString()}
+                                                onClick={next}><i
+                                                className="fa-solid fa-chevron-right"></i></button>
+
+                                            <button
+                                                disabled={query.get('page') === totalPages.toString()}
+                                                onClick={toLast}><i
+                                                className="fa-solid fa-angles-right"></i></button>
+                                        </div>
+                                    </div>
+                            }
 
                         </div>
             }

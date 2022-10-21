@@ -20,4 +20,11 @@
 
 }
 
+@media screen and (max-width: 950px){
+
+    .user_info {
+        display: none;
+    }
+
+}
 

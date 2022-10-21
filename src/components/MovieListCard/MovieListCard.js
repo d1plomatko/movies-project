@@ -12,7 +12,7 @@ const MovieListCard = ({movie}) => {
 
     return (
         <div className={css.card} id={themes.card} onClick={()=> navigate(`/movies/${movie.id}`)}>
-            {movie.poster_path? <PosterPreview>{movie.poster_path}</PosterPreview> : <div className={css.background}>no photo</div>}
+            {movie.poster_path? <PosterPreview movieTitle={movie.title}>{movie.poster_path}</PosterPreview> : <div className={css.background}>no photo</div>}
             <MovieInfo movie={{...movie}}/>
         </div>
     );

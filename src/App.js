@@ -1,8 +1,9 @@
-import './App.css';
 import {Route, Routes} from "react-router-dom";
+
 import {MainLayout} from "./layouts";
 import {LoginPage, MovieDetailsPage, MoviesPage} from "./pages";
 import {RequireAuth} from "./hoc";
+import './App.css';
 
 function App() {
 

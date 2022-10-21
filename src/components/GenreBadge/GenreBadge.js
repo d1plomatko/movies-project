@@ -10,15 +10,15 @@ const GenreBadge = ({children}) => {
 
     for (let id of children) {
         const find = genres.find(value => value.id === id);
-        badges.push(find?.name)
+        badges.push(find?.name);
     }
 
     return (
         <div className={css.badges_wrapper}>
-            {badges.map((badge, index) => <div key={index} className={css.badge}>{badge}</div> )}
+            {badges.map((badge, index) => <div key={index} className={css.badge}>{badge}</div>)}
         </div>
     )
 
-}
+};
 
-export {GenreBadge}
+export {GenreBadge};
