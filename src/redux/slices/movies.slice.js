@@ -81,7 +81,7 @@ const moviesSlice = createSlice({
                 state.currentPage = action.payload.page;
                 state.loading = false;
             })
-            .addCase(search.pending, (state,action) => {
+            .addCase(search.pending, (state) => {
                 state.loading = true;
             })
             .addCase(search.rejected, (state, action) => {

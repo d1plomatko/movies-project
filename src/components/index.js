@@ -10,3 +10,5 @@ export * from './StarsRating/StarsRating';
 export * from './ThemeSwitch/ThemeSwitch';
 export * from './UserInfo/UserInfo.module.css';
 export * from './Login/Login';
+export * from './TrailerPlayer/TrailerPlayer';
+export * from './NotFound/NotFound';

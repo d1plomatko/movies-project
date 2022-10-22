@@ -1,9 +1,9 @@
 import {useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 
-import css from './MovieListCard.module.css';
 import {MovieInfo} from "../MovieInfo/MovieInfo";
 import {PosterPreview} from "../PosterPreview/PosterPreview";
+import css from './MovieListCard.module.css';
 
 const MovieListCard = ({movie}) => {
     const {themes} = useSelector(state => state.themeReducer);

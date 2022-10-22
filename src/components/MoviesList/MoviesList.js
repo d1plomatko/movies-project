@@ -101,13 +101,14 @@ const MoviesList = () => {
         window.scrollTo(0, 0);
     };
 
-    console.log(movies);
-
     return (
-        <div className={`${css.container} cards`} id={themes.main}>
+        <div className={css.container} id={themes.main}>
             {
                 loading ?
-                    <div className={css.empty_page}></div> :
+                    <div className={css.loading}>
+                        <img src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif'
+                             alt="loading..."/>
+                    </div> :
                     error ?
                         <div className={css.error}>{error.status_message}</div> :
                         <div>
@@ -148,7 +149,8 @@ const MoviesList = () => {
                             }
 
                             {
-                                movies.length === 0 ? <div className={css.no_matches}>No matches found</div> :
+                                movies.length === 0 ?
+                                    <div className={css.no_matches}>No matches found</div> :
                                     <div>
                                         <div className={css.cards_wrapper}>
                                             {movies.map(movie => <MovieListCard key={movie.id}
