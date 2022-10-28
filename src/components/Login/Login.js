@@ -40,7 +40,7 @@ const Login = () => {
                 {errors.username && <div className={css.name_error}>{errors.username.message}</div>}
                 <label className={css.pass_label}><i className="fa-solid fa-lock"></i></label>
 
-                <input type="text" placeholder={'Password'} {...register('password')}/>
+                <input type="password" placeholder={'Password'} {...register('password')}/>
                 {errors.password && <div className={css.pass_error}>{errors.password.message}</div>}
 
                 <button disabled={!isValid}>Login</button>
