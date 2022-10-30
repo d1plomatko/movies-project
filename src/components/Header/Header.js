@@ -7,9 +7,8 @@ import {authActions} from "../../redux/slices/auth.slice";
 import css from './Header.module.css';
 
 
-const Header = () => {
+const Header = ({setTheme, theme}) => {
 
-    const {themes} = useSelector(state => state.themeReducer);
     const {user} = useSelector(state => state.authReducer);
     const dispatch = useDispatch();
 
@@ -27,9 +26,9 @@ const Header = () => {
     return (
         <header>
 
-            <div className={css.header_container} id={themes.header}>
+            <div className={`${css.header_container} header`}>
 
-                <ThemeSwitch/>
+                <ThemeSwitch theme={theme} setTheme={setTheme}/>
 
                 <Link to={'/movies'} className={css.header_logo}><i
                     className="fa-solid fa-film"></i>Movies</Link>

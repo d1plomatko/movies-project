@@ -1,16 +1,12 @@
-import {useSelector} from "react-redux";
-
 import css from './MovieDetailsInfo.module.css';
 
 const MovieDetailsInfo = ({movieDetails}) => {
 
     const {production_companies, production_countries, genres} = movieDetails;
 
-    const {themes} = useSelector(state => state.themeReducer);
-
     return (
         <div>
-            <div className={css.info} id={themes.details}>
+            <div className={css.info}>
                 <h4>Rating:</h4>
                 <div><span>{movieDetails.vote_average} </span>({movieDetails.vote_count})
                 </div>

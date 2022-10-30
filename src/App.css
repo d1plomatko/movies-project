@@ -6,75 +6,83 @@ body {
     box-sizing: border-box;
 }
 
-#card_dark {
+#dark .card {
     background-color: #222;
     box-shadow: 1px 4px 12px 2px black;
 }
 
 
-#header_dark {
+#dark .header{
     background-color: #060f13;
 }
 
-#main_dark {
+#dark .main {
     background-color: #222;
 }
 
-#main_dark h2 {
+#dark .main h2 {
     color: gray
 }
 
-#navbar_dark {
+#dark .navbar {
     background-color: #222;
     border-bottom: 2px solid black;
 }
 
-#navbar_dark button {
+#dark .navbar button {
     color: #777;
 }
 
-#navbar_dark button:hover {
+#dark .navbar button:hover {
     background-color: #222;
 }
 
-#navbar_dark input {
+#dark .navbar input {
     background-color: #222;
     color: #777;
 }
 
-#genres_dark {
+#dark .genres {
     background-color: #191717;
     border: 1px solid black;
 }
 
-#genres_dark button {
+#dark .genres button {
     background-color: #222;
     color: #777;
 }
 
-#body_dark {
+#dark .background {
     background-color: #222d33;
 }
 
-#details_dark {
+#dark .details {
     background-color: #222;
     color: snow;
     text-decoration: none;
 }
 
 
-#details_dark .info div {
-    border-bottom: 1px solid white;
-}
 
-#form_dark {
+#dark .login_form {
     background-color: #181717;
     box-shadow: 1px 4px 12px 2px black;
 }
 
-#form_dark input {
+#dark .login_form input {
     background-color: #222;
     border: 2px solid black;
     color: white;
 }
+
+#dark .swiper_dark {
+    border-bottom: 2px solid black;
+}
+
+
+.swiper-button-prev, .swiper-button-next {
+    color: white;
+}
+
+
 

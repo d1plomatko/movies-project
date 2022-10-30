@@ -14,7 +14,6 @@ const MovieDetails = () => {
     const {movieID: id} = useParams();
 
     const {movieDetails, loading, error} = useSelector(state => state.moviesReducer);
-    const {themes} = useSelector(state => state.themeReducer);
     const dispatch = useDispatch();
 
     const [trailer, setTrailer] = useState(false);
@@ -25,7 +24,7 @@ const MovieDetails = () => {
 
 
     return (
-        <div className={css.movie_container} id={themes.details}>
+        <div className={`${css.movie_container} details`} >
             {
                 loading ?
                     <div className={css.loading}>
@@ -62,8 +61,8 @@ const MovieDetails = () => {
                             </div>
                             <div className={css.footer}>
                                 <h3>Description</h3>
-                                <div id={themes.details}
-                                     className={css.overview}>{movieDetails.overview}</div>
+                                <div
+                                     className={`${css.overview} details`}>{movieDetails.overview}</div>
                             </div>
                         </div>
             }

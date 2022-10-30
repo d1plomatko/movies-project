@@ -1,5 +1,5 @@
 import {useForm} from "react-hook-form";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {useLocation, useNavigate} from "react-router-dom";
 import {joiResolver} from "@hookform/resolvers/joi";
 
@@ -14,7 +14,6 @@ const Login = () => {
         resolver: joiResolver(userValidator)
     });
 
-    const {themes} = useSelector(state => state.themeReducer);
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
@@ -28,9 +27,9 @@ const Login = () => {
     };
 
     return (
-        <div className={css.login_wrapper} id={themes.main}>
+        <div className={`${css.login_wrapper} main`}>
 
-            <form onSubmit={handleSubmit(submit)} id={themes.form}>
+            <form onSubmit={handleSubmit(submit)} className={'login_form'}>
 
                 <h2>Login</h2>
 

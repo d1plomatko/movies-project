@@ -12,3 +12,6 @@ export * from './UserInfo/UserInfo.module.css';
 export * from './Login/Login';
 export * from './TrailerPlayer/TrailerPlayer';
 export * from './NotFound/NotFound';
+export * from './NavBar/NavBar';
+export * from './TrendingSwiper/TrendingSwiper';
+export * from './TrendingCard/TrendingCard';
